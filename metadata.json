@@ -1,0 +1,6 @@
+{
+  "name": "LT Essencial: Código Honra",
+  "description": "Página de vendas de alta conversão para o treinamento completo Código Honra / Paternidade com Propósito de Wagner Ferraz.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
