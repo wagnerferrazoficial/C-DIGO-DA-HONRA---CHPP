@@ -1,5 +1,7 @@
 import { BookOpen, CheckCircle, Smartphone } from "lucide-react";
 import { motion } from "motion/react";
+// @ts-ignore
+import mockupImg from "../assets/images/conteudo_mockup_1782921467506.jpg";
 
 interface SecondFoldProps {
   onCtaClick: () => void;
@@ -30,6 +32,30 @@ export default function SecondFold({ onCtaClick }: SecondFoldProps) {
           <p className="font-opensans font-extrabold text-sm sm:text-base md:text-lg text-white mt-4 uppercase tracking-wide bg-[#FF0000]/20 border border-red-600 py-2.5 px-4 rounded-xl">
             É um jeito novo de o seu filho voltar a te enxergar como referência dentro da própria casa.
           </p>
+        </motion.div>
+
+        {/* Product Mockup Container */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1, duration: 0.5 }}
+          className="w-full max-w-xl mb-10 border-4 border-black rounded-2xl overflow-hidden shadow-[6px_6px_0px_0px_rgba(255,215,0,1)] bg-neutral-900"
+        >
+          <img 
+            src={mockupImg} 
+            alt="Código da Honra - Mockup Oficial" 
+            className="w-full h-auto object-cover select-none"
+            referrerPolicy="no-referrer"
+          />
+          <div className="bg-neutral-950 p-3.5 border-t-2 border-black flex items-center justify-between text-xs font-montserrat">
+            <span className="font-extrabold text-[#FFD700] uppercase tracking-wider flex items-center gap-1.5">
+              📖 WORKBOOK DIGITAL + MP3 ÁUDIOS
+            </span>
+            <span className="bg-[#25D366] text-black font-black px-2 py-0.5 rounded text-[10px]">
+              VITALÍCIO
+            </span>
+          </div>
         </motion.div>
 
         {/* PRICE BLOCK / CONTAINER (O Bloco com o preço do produto) */}
