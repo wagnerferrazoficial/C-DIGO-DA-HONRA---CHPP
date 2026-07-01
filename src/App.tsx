@@ -2,6 +2,7 @@ import { useState } from "react";
 import CountdownTimer from "./components/CountdownTimer";
 import FirstFold from "./components/FirstFold";
 import SecondFold from "./components/SecondFold";
+import Testimonials from "./components/Testimonials";
 import Biography from "./components/Biography";
 import ThirdFold from "./components/ThirdFold";
 import FourthFold from "./components/FourthFold";
@@ -62,6 +63,9 @@ export default function App() {
 
       {/* 3. SECOND FOLD (CÓDIGO HONRA presentation, WhatsApp green pricing & Yellow CTA) */}
       <SecondFold onCtaClick={scrollToCheckout} />
+
+      {/* NEW: TESTIMONIALS SECTION (6 parents from different states, realistic prints layout) */}
+      <Testimonials />
 
       {/* 4. BIOGRAPHY (Between 2nd and 3rd fold, 35% image width mobile, standard text) */}
       <Biography />
