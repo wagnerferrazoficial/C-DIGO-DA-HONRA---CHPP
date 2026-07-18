@@ -9,6 +9,8 @@ import FourthFold from "./components/FourthFold";
 import FifthFold from "./components/FifthFold";
 import SixthFold from "./components/SixthFold";
 import SeventhFold from "./components/SeventhFold";
+import Faq from "./components/Faq";
+import FloatingCta from "./components/FloatingCta";
 import Footer from "./components/Footer";
 import { CheckCircle2, ShieldCheck, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
@@ -27,11 +29,11 @@ export default function App() {
   };
 
   const handleFinalCheckout = () => {
-    window.open("https://pay.cakto.com.br/3exodbj_950180", "_blank");
+    window.open("https://pay.cakto.com.br/zqhk2gx", "_blank");
     // Track custom Meta Pixel event if fbq is defined
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "InitiateCheckout", {
-        value: 27.0,
+        value: 17.0,
         currency: "BRL",
       });
     }
@@ -39,21 +41,21 @@ export default function App() {
 
   const handleCopyPix = () => {
     navigator.clipboard.writeText(
-      "00020101021126580014br.gov.bcb.pix0136cursoswagnerferraz@gmail.com520400005303986540527.005802BR5913Wagner Ferraz6008Rondonia62070503***6304D1E3"
+      "00020101021126580014br.gov.bcb.pix0136cursoswagnerferraz@gmail.com520400005303986540517.005802BR5913Wagner Ferraz6008Rondonia62070503***6304"
     );
     setCopiedPix(true);
     setTimeout(() => setCopiedPix(false), 3000);
 
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "Purchase", {
-        value: 27.0,
+        value: 17.0,
         currency: "BRL",
       });
     }
   };
 
   return (
-    <div className="min-h-screen bg-white text-black font-opensans antialiased select-none selection:bg-[#FFD700] selection:text-black">
+    <div className="min-h-screen bg-neutral-950 text-white font-opensans antialiased select-none selection:bg-[#FFD700] selection:text-black">
       
       {/* 1. URGENT RED COUNTDOWN BANNER */}
       <CountdownTimer />
@@ -85,8 +87,14 @@ export default function App() {
       {/* 9. SEVENTH FOLD (Checkout area, yellow bg, nested black card with green price & CTA button) */}
       <SeventhFold onCtaClick={handleFinalCheckout} />
 
+      {/* NEW: FAQ SECTION (Highly optimized to resolve objections and boost conversions) */}
+      <Faq />
+
       {/* 10. FOOTER (@wagnerferrazoficial & WhatsApp with proper redirects) */}
       <Footer />
+
+      {/* FLOATING CTA: Mobile sticky bottom bar past first fold */}
+      <FloatingCta onClick={scrollToCheckout} />
 
       {/* HIGH CONVERTING CHECKOUT DIALOG / POPUP */}
       <AnimatePresence>
@@ -116,7 +124,7 @@ export default function App() {
                   Conclua sua Inscrição
                 </h3>
                 <p className="text-xs sm:text-sm text-neutral-300 font-bold mt-1.5 uppercase tracking-wide">
-                  Acesso imediato ao Código Honra por R$ 27,00
+                  Acesso imediato ao Código Honra por R$ 17,00
                 </p>
               </div>
 
@@ -130,7 +138,7 @@ export default function App() {
                     <li>Copie a chave Pix (e-mail do Wagner) abaixo;</li>
                     <li>Abra o aplicativo do seu banco preferido;</li>
                     <li>Vá na área Pix copia e cola ou Pix por e-mail;</li>
-                    <li>Envie o valor exato de <strong className="text-white font-black underline decoration-[#25D366] decoration-2">R$ 27,00</strong>;</li>
+                    <li>Envie o valor exato de <strong className="text-white font-black underline decoration-[#25D366] decoration-2">R$ 17,00</strong>;</li>
                     <li>Seu acesso será liberado no seu e-mail cadastrado de imediato.</li>
                   </ol>
                 </div>

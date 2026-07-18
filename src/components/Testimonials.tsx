@@ -20,19 +20,19 @@ import {
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="w-full bg-[#FAF9F6] text-black py-16 px-5 sm:px-8 md:px-12 border-b-4 border-black select-none overflow-hidden">
+    <section id="testimonials" className="w-full bg-neutral-950 text-white py-16 px-5 sm:px-8 md:px-12 border-b-4 border-black select-none overflow-hidden">
       <div className="max-w-5xl mx-auto">
         
         {/* Section Header tailored for Cold Traffic Direct Response */}
         <div className="text-center mb-12">
-          <span className="bg-[#FF0000] text-white text-xs font-black uppercase tracking-widest font-montserrat px-3.5 py-1.5 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+          <span className="bg-[#FF0000] text-white text-xs font-black uppercase tracking-widest font-montserrat px-3.5 py-1.5 border-2 border-black shadow-[3px_3px_0px_0px_rgba(255,215,0,1)]">
             PROVA SOCIAL REAL
           </span>
-          <h2 className="font-montserrat font-extrabold text-2xl xs:text-3xl sm:text-4xl md:text-5xl text-black mt-6 leading-tight tracking-tight max-w-3xl mx-auto uppercase">
+          <h2 className="font-montserrat font-black text-2xl xs:text-3xl sm:text-4xl md:text-5xl text-white mt-6 leading-tight tracking-tight max-w-3xl mx-auto uppercase">
             Famílias restauradas por todo o Brasil
           </h2>
-          <p className="font-opensans font-bold text-sm sm:text-base md:text-lg text-gray-700 mt-4 max-w-2xl mx-auto leading-relaxed">
-            Veja os prints reais de conversas e comentários de pais que cansaram de gritar e aplicaram o <span className="underline decoration-[#FF0000] decoration-2 font-black text-black">Código da Honra</span> em suas casas.
+          <p className="font-opensans font-bold text-xs sm:text-sm md:text-base text-neutral-300 mt-4 max-w-2xl mx-auto leading-relaxed">
+            Veja os prints reais de conversas e comentários de pais que cansaram de gritar e aplicaram o <span className="text-[#FFD700] font-black underline decoration-[#FFD700] decoration-2">Código da Honra</span> em suas casas.
           </p>
         </div>
 

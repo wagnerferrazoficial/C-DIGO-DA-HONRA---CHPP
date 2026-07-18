@@ -1,7 +1,5 @@
-import { BookOpen, CheckCircle, Smartphone } from "lucide-react";
+import { BookOpen, CheckCircle, Smartphone, Flame, Headphones, Zap, ShieldCheck, Play } from "lucide-react";
 import { motion } from "motion/react";
-// @ts-ignore
-import mockupImg from "../assets/images/conteudo_mockup_1782921467506.jpg";
 
 interface SecondFoldProps {
   onCtaClick: () => void;
@@ -9,137 +7,160 @@ interface SecondFoldProps {
 
 export default function SecondFold({ onCtaClick }: SecondFoldProps) {
   return (
-    <section id="second-fold" className="w-full bg-black text-white py-14 px-5 sm:px-8 md:px-12 select-none border-b-4 border-black">
-      <div className="max-w-4xl mx-auto flex flex-col items-center">
+    <section 
+      id="second-fold" 
+      className="w-full bg-neutral-900 text-white py-14 sm:py-20 px-5 sm:px-8 md:px-12 select-none border-b-4 border-black relative overflow-hidden"
+    >
+      {/* Decorative premium element */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#FFD700]/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto flex flex-col items-center relative z-10">
         
-        {/* PRESENTATION OF THE METHOD (Apresentação do Método) */}
+        {/* Flag badge */}
         <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="inline-flex items-center gap-1.5 bg-[#FFD700] text-black text-[9px] sm:text-[10px] font-black uppercase tracking-widest px-4 py-1.5 border border-black rounded-lg shadow-[3px_3px_0px_0px_rgba(255,255,255,1)] mb-6"
+        >
+          <Play className="w-3 h-3 fill-black shrink-0" />
+          <span>APRESENTANDO O PROTOCOLO DE AUTORIDADE</span>
+        </motion.div>
+
+        {/* Title */}
+        <motion.h2 
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10 max-w-2xl"
+          className="font-montserrat font-black text-2xl xs:text-3xl sm:text-4xl text-center text-white leading-tight uppercase tracking-tight max-w-2xl"
         >
-          <span className="bg-[#FFD700] text-black text-xs font-black uppercase tracking-widest font-montserrat px-3 py-1.5 border-2 border-black shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]">
-            MÉTODO EXCLUSIVO
-          </span>
-          <h2 className="font-montserrat font-extrabold text-3xl sm:text-4xl md:text-5xl mt-4 tracking-tight text-[#FFD700] uppercase">
-            🧠 CÓDIGO HONRA
-          </h2>
-          <p className="font-opensans font-bold text-base sm:text-lg md:text-xl text-neutral-300 mt-4 leading-relaxed">
-            Um sistema simples e prático que mostra como recuperar o respeito dentro de casa sem gritar, sem brigar e sem desgaste diário.
-          </p>
-          <p className="font-opensans font-extrabold text-sm sm:text-base md:text-lg text-white mt-4 uppercase tracking-wide bg-[#FF0000]/20 border border-red-600 py-2.5 px-4 rounded-xl">
-            É um jeito novo de o seu filho voltar a te enxergar como referência dentro da própria casa.
-          </p>
-        </motion.div>
+          TREINAMENTO <span className="text-[#FFD700] underline decoration-[#FFD700] decoration-2">CÓDIGO HONRA</span>
+        </motion.h2>
 
-        {/* Product Mockup Container */}
+        {/* Short explanation */}
+        <motion.p 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1, duration: 0.5 }}
+          className="font-opensans font-bold text-xs xs:text-sm sm:text-base text-neutral-300 text-center mt-4 max-w-xl leading-relaxed"
+        >
+          O único protocolo estratégico em áudios rápidos e checklists de ação imediata que desliga o comportamento rebelde do seu filho e reconecta o amor, o respeito e a admiração mútua de forma natural.
+        </motion.p>
+
+        {/* WHY IT WORKS SECTION (Direct response trigger for busy parents 25-44) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full mt-10 mb-12 max-w-3xl">
+          <div className="bg-neutral-950 border border-neutral-800 p-5 rounded-2xl text-left hover:border-[#FFD700]/30 transition-all duration-200">
+            <div className="text-[#FFD700] mb-3 flex items-center gap-1.5 font-montserrat font-black text-[10px] uppercase tracking-widest">
+              <Headphones className="w-4 h-4 text-[#FFD700]" />
+              <span>SISTEMA ULTRA-PRÁTICO</span>
+            </div>
+            <h4 className="font-montserrat font-black text-xs sm:text-sm text-white uppercase tracking-tight mb-2">ÁUDIOS DE 15 MINUTOS</h4>
+            <p className="font-opensans text-[11px] sm:text-xs text-neutral-400 font-semibold leading-relaxed">
+              Desenvolvido sob medida para pais extremamente ocupados. Escute no trânsito, lavando a louça ou antes de dormir e aplique na hora.
+            </p>
+          </div>
+
+          <div className="bg-neutral-950 border border-neutral-800 p-5 rounded-2xl text-left hover:border-[#FFD700]/30 transition-all duration-200">
+            <div className="text-[#FFD700] mb-3 flex items-center gap-1.5 font-montserrat font-black text-[10px] uppercase tracking-widest">
+              <Zap className="w-4 h-4 text-[#FFD700]" />
+              <span>SCRIPTS PRONTOS</span>
+            </div>
+            <h4 className="font-montserrat font-black text-xs sm:text-sm text-white uppercase tracking-tight mb-2">FALE DE FORMA HIPNÓTICA</h4>
+            <p className="font-opensans text-[11px] sm:text-xs text-neutral-400 font-semibold leading-relaxed">
+              Você saberá o tom exato, as palavras magnéticas e a linguagem corporal que desarmam qualquer pirraça ou teimosia de primeira.
+            </p>
+          </div>
+
+          <div className="bg-neutral-950 border border-neutral-800 p-5 rounded-2xl text-left hover:border-[#FFD700]/30 transition-all duration-200">
+            <div className="text-[#FFD700] mb-3 flex items-center gap-1.5 font-montserrat font-black text-[10px] uppercase tracking-widest">
+              <Flame className="w-4 h-4 text-[#FFD700]" />
+              <span>RESTAURAÇÃO PROFUNDA</span>
+            </div>
+            <h4 className="font-montserrat font-black text-xs sm:text-sm text-white uppercase tracking-tight mb-2">SEM BRIGAS OU CASTIGOS</h4>
+            <p className="font-opensans text-[11px] sm:text-xs text-neutral-400 font-semibold leading-relaxed">
+              Nada de gritos humilhantes ou agressões. Recupere o respeito restaurando o afeto, a segurança e a maturidade emocional do seu filho.
+            </p>
+          </div>
+        </div>
+
+        {/* Product Offer Box with Finch Premium Frame Style */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.1, duration: 0.5 }}
-          className="w-full max-w-xl mb-10 border-4 border-black rounded-2xl overflow-hidden shadow-[6px_6px_0px_0px_rgba(255,215,0,1)] bg-neutral-900"
-        >
-          <img 
-            src={mockupImg} 
-            alt="Código da Honra - Mockup Oficial" 
-            className="w-full h-auto object-cover select-none"
-            referrerPolicy="no-referrer"
-          />
-          <div className="bg-neutral-950 p-3.5 border-t-2 border-black flex items-center justify-between text-xs font-montserrat">
-            <span className="font-extrabold text-[#FFD700] uppercase tracking-wider flex items-center gap-1.5">
-              📖 WORKBOOK DIGITAL + MP3 ÁUDIOS
-            </span>
-            <span className="bg-[#25D366] text-black font-black px-2 py-0.5 rounded text-[10px]">
-              VITALÍCIO
-            </span>
-          </div>
-        </motion.div>
-
-        {/* PRICE BLOCK / CONTAINER (O Bloco com o preço do produto) */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="w-full max-w-xl bg-neutral-950 border-4 border-[#FFD700] rounded-2xl p-6 sm:p-8 flex flex-col items-center shadow-[8px_8px_0px_0px_rgba(255,215,0,0.3)] relative overflow-hidden"
+          className="w-full max-w-lg bg-neutral-950 border-3 border-[#FFD700] rounded-3xl p-6 sm:p-8 flex flex-col items-center text-center shadow-[0px_0px_30px_rgba(255,215,0,0.15)]"
         >
-          {/* Yellow Badge: ACESSO IMEDIATO (Must be in exactly one line on mobile) */}
-          <div className="bg-[#FFD700] text-black font-montserrat font-black text-[13px] xxs:text-[14px] xs:text-[15px] sm:text-lg px-4 py-2 border-3 border-black rounded-xl uppercase tracking-wider whitespace-nowrap mb-6 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
-            ACESSO IMEDIATO
+          <span className="bg-neutral-900 text-neutral-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full border border-neutral-800">
+            PRODUÇÃO EXCLUSIVA • ACESSO IMEDIATO
+          </span>
+          
+          <h3 className="font-montserrat font-black text-lg sm:text-xl md:text-2xl text-white mt-4 uppercase leading-tight tracking-tight">
+            O QUE VOCÊ VAI ADQUIRIR AGORA:
+          </h3>
+
+          <div className="w-16 h-1.5 bg-[#FFD700] rounded-full my-4" />
+
+          {/* Value inclusions list */}
+          <div className="flex flex-col gap-3 w-full max-w-md bg-neutral-900/60 p-4 rounded-2xl border border-neutral-800 mb-6">
+            <div className="flex items-center gap-3 text-left">
+              <CheckCircle className="text-[#25D366] w-5 h-5 shrink-0 stroke-[2.5]" />
+              <span className="font-montserrat font-bold text-[12px] sm:text-[13px] text-white leading-tight">
+                Método Completo Código Honra em Áudio <span className="text-[#FFD700] font-black">(Valor Real R$ 97)</span>
+              </span>
+            </div>
+            <div className="flex items-center gap-3 text-left">
+              <CheckCircle className="text-[#25D366] w-5 h-5 shrink-0 stroke-[2.5]" />
+              <span className="font-montserrat font-bold text-[12px] sm:text-[13px] text-white leading-tight">
+                Manual Prático Paternidade com Propósito PDF <span className="text-[#FFD700] font-black">(Valor Real R$ 47)</span>
+              </span>
+            </div>
+            <div className="flex items-center gap-3 text-left">
+              <CheckCircle className="text-[#25D366] w-5 h-5 shrink-0 stroke-[2.5]" />
+              <span className="font-montserrat font-bold text-[12px] sm:text-[13px] text-white leading-tight">
+                6 Guias Rápidos de Ação Pessoal <span className="text-[#FFD700] font-black">(Bônus Grátis)</span>
+              </span>
+            </div>
+            <div className="flex items-center gap-3 text-left">
+              <CheckCircle className="text-[#25D366] w-5 h-5 shrink-0 stroke-[2.5]" />
+              <span className="font-montserrat font-bold text-[12px] sm:text-[13px] text-white leading-tight">
+                Acesso Vitalício, Sem Mensalidades <span className="text-[#FFD700] font-black">(Inestimável)</span>
+              </span>
+            </div>
           </div>
 
-          {/* O QUE ESTÁ INCLUÍDO (In yellow, bold, Montserrat ExtraBold - Tipo A) */}
-          <h4 className="font-montserrat font-black text-lg sm:text-xl md:text-2xl text-[#FFD700] uppercase tracking-wide mb-4">
-            O QUE ESTÁ INCLUÍDO:
-          </h4>
-
-          {/* Included item details: smaller size, white, regular Montserrat (Tipo C) */}
-          <div className="flex flex-col gap-3.5 w-full max-w-md bg-black/80 p-5 rounded-xl border-2 border-neutral-800 mb-6">
-            <div className="flex items-center gap-3 text-left">
-              <CheckCircle className="text-[#FFD700] w-5 h-5 shrink-0 stroke-[2.5]" />
-              <span className="font-montserrat font-bold text-[12px] sm:text-[14px] text-white leading-tight">
-                Acesso vitalício ao Treinamento Código Honra
-              </span>
-            </div>
-            <div className="flex items-center gap-3 text-left">
-              <BookOpen className="text-neutral-400 w-5 h-5 shrink-0" />
-              <span className="font-montserrat font-bold text-[12px] sm:text-[14px] text-neutral-300 leading-tight">
-                Treinamento Completo Paternidade com Propósito
-              </span>
-            </div>
-            <div className="flex items-center gap-3 text-left">
-              <Smartphone className="text-neutral-400 w-5 h-5 shrink-0" />
-              <span className="font-montserrat font-bold text-[12px] sm:text-[14px] text-neutral-300 leading-tight">
-                Áudios práticos para ouvir no celular + material em PDF
-              </span>
-            </div>
-          </div>
-
-          {/* Value comparison (Urgency pricing) */}
-          <div className="text-center mb-3">
-            <span className="font-opensans font-bold text-sm text-neutral-500 line-through mr-3">
-              De R$ 97,00
+          {/* Premium Low-Ticket Pricing display */}
+          <div className="flex flex-col items-center mb-6">
+            <span className="font-montserrat font-bold text-xs sm:text-sm text-neutral-500 uppercase tracking-wider line-through">
+              De R$ 147,00
             </span>
-            <span className="font-opensans font-black text-xs sm:text-sm text-white bg-[#FF0000] px-3 py-1 border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wider">
-              DESCONTO ESPECIAL HOJE
+            <div className="flex items-baseline gap-1 mt-1">
+              <span className="font-montserrat font-bold text-sm sm:text-base text-[#25D366] uppercase">Por apenas</span>
+              <span className="font-montserrat font-black text-3xl sm:text-4xl text-[#25D366] tracking-tight">R$ 17,00</span>
+            </div>
+            <span className="font-montserrat font-extrabold text-[9px] sm:text-[10px] text-neutral-400 uppercase tracking-widest mt-1">
+              *Pagamento Único • Sem Taxas Ocultas*
             </span>
           </div>
 
-          {/* Price: WhatsApp Green, bold, Montserrat ExtraBold, 50% larger */}
-          <div className="text-center mb-6">
-            <p className="font-opensans font-black text-xs sm:text-sm text-neutral-400 uppercase tracking-widest">
-              POR APENAS
-            </p>
-            <p className="font-montserrat font-black text-5xl xxs:text-6xl sm:text-7xl md:text-8xl text-[#25D366] tracking-tight mt-1 drop-shadow-[3px_3px_0px_rgba(0,0,0,1)]">
-              R$ 27,00
-            </p>
-            <p className="font-opensans font-extrabold text-[11px] sm:text-xs text-[#FFD700] mt-1 uppercase tracking-widest">
-              ou em até 3x no cartão de crédito
-            </p>
-          </div>
-
-          {/* CTA Yellow Button: CLIQUE AQUI PARA LIBERAR SEU ACESSO */}
+          {/* Yellow CTA pulse button */}
           <button
             onClick={onCtaClick}
-            id="cta-button-second"
-            className="w-full bg-[#FFD700] hover:bg-[#FFE033] text-black font-montserrat font-black text-[14px] xs:text-[16px] sm:text-[18px] md:text-xl py-4.5 px-6 rounded-xl border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all duration-150 cursor-pointer uppercase"
+            className="w-full bg-[#FFD700] hover:bg-[#FFE033] text-black font-montserrat font-black text-xs sm:text-sm py-4 rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_rgba(255,255,255,1)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all duration-100 uppercase tracking-wider flex items-center justify-center gap-2 animate-bounce cursor-pointer"
           >
-            {/* Exactly two lines on mobile */}
-            <span className="block sm:hidden leading-tight">
-              CLIQUE AQUI<br />PARA LIBERAR SEU ACESSO
-            </span>
-            <span className="hidden sm:block">
-              CLIQUE AQUI PARA LIBERAR SEU ACESSO
-            </span>
+            <span>SIM! QUERO ADQUIRIR O CÓDIGO HONRA</span>
           </button>
-          
-          <p className="text-[10px] sm:text-[11px] text-neutral-400 font-opensans mt-4 uppercase tracking-widest font-bold flex items-center gap-1.5">
-            🔒 Compra 100% segura e garantida
-          </p>
 
+          {/* Trust assurances */}
+          <div className="flex items-center justify-center gap-4 mt-4 text-[10px] text-neutral-400 font-bold uppercase tracking-widest">
+            <span className="flex items-center gap-1">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#25D366]" /> Compra 100% Segura
+            </span>
+            <span>•</span>
+            <span>7 Dias de Garantia Dupla</span>
+          </div>
         </motion.div>
 
       </div>
